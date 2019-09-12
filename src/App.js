@@ -4,7 +4,8 @@ import "./style.css";
 import Details from "./components/Details";
 import Menu from "./components/Menu";
 import Book from "./components/Book";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import PageNotFound from "./components/PageNotFound";
+import { Route, Switch } from "react-router-dom";
 
 class App extends React.Component {
   constructor() {
@@ -34,44 +35,44 @@ class App extends React.Component {
   render() {
     const books = this.state.books;
     return (
-      <BrowserRouter>
-        <div className="container">
-          <Menu
-            search={this.handleSearch}
-            currentCategory={this.state.category}
+      <div className="container">
+        <Menu
+          search={this.handleSearch}
+          currentCategory={this.state.category}
+        />
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={props => (
+              <Details
+                {...props}
+                books={books}
+                category={this.state.category}
+                search={this.handleSearch}
+              />
+            )}
           />
-          <Switch>
-            <Route
-              path="/"
-              exact
-              render={props => (
-                <Details
-                  {...props}
-                  books={books}
-                  category={this.state.category}
-                  search={this.handleSearch}
-                />
-              )}
-            />
-            <Route
-              path="/:category"
-              exact
-              render={props => (
-                <Details
-                  {...props}
-                  books={books}
-                  category={this.state.category}
-                  search={this.handleSearch}
-                />
-              )}
-            />
-            <Route
-              path="/book/:bookUrl"
-              render={props => <Book {...props} books={books} />}
-            />
-          </Switch>
-        </div>
-      </BrowserRouter>
+          <Route
+            path="/category"
+            exact
+            render={props => (
+              <Details
+                {...props}
+                books={books}
+                category={this.state.category}
+                search={this.handleSearch}
+              />
+            )}
+          />
+          <Route
+            path="/book"
+            exact
+            render={props => <Book {...props} books={books} />}
+          />
+          <Route component={PageNotFound} />
+        </Switch>
+      </div>
     );
   }
 }

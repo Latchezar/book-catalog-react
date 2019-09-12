@@ -1,6 +1,7 @@
 import React from "react";
 import noimage from "../noimage.png";
 import Loading from "./Loading";
+import { ParamByName } from "../services/Extractors";
 
 class Book extends React.Component {
   constructor(props) {
@@ -17,17 +18,31 @@ class Book extends React.Component {
       .then(responseJson => this.setState({ book: responseJson }));
   }
 
-  render() {
-    const books = this.props.books;
-    const id = this.props.match.params.bookUrl;
-    let book;
+  checkBook(books, id) {
     if (books.length === 0) {
-      book = this.state.book;
+      return this.state.book;
     } else {
-      book = books.filter(b => b.id === id)[0];
+      return books.filter(b => b.id === id)[0];
     }
+  }
+
+  componentDidMount() {
+    const books = this.props.books;
+    const id = ParamByName("id", this.props.location.search);
+    const book = this.checkBook(books, id);
     if (book === undefined) {
       this.makeFetch(id);
+    } else {
+      this.setState({
+        book: book
+      });
+    }
+  }
+
+  render() {
+    const book = this.state.book;
+    console.log(book);
+    if (book === undefined) {
       return <Loading />;
     } else {
       try {

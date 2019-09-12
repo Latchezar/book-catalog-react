@@ -11,17 +11,23 @@ class MenuListItem extends React.Component {
     if (shouldBeActive) {
       return (
         <li>
-          <a className="nav-link active" href={this.props.url}>
+          <Link
+            className="nav-link active"
+            to={"/category?category=" + this.props.text}
+          >
             {this.props.text}
-          </a>
+          </Link>
         </li>
       );
     } else {
       return (
         <li>
-          <a className="nav-link" href={this.props.url}>
+          <Link
+            className="nav-link"
+            to={"/category?category=" + this.props.text}
+          >
             {this.props.text}
-          </a>
+          </Link>
         </li>
       );
     }

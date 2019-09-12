@@ -21,7 +21,7 @@ class BookDetails extends React.Component {
 
   render() {
     const book = this.props.bookDetails;
-    const link = "/book/" + book.id;
+    const link = "/book?id=" + book.id;
     try {
       if (this.state.toogle) {
         return (

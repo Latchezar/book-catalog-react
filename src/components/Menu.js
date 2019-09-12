@@ -3,10 +3,6 @@ import SearchForm from "./SearchForm";
 import MenuListItem from "./MenuListItem";
 
 class Menu extends React.Component {
-  handleSearch = text => {
-    this.props.search(text);
-  };
-
   render() {
     const listItemsText = [
       { name: "JavaScript", categoryId: 1 },
@@ -18,13 +14,11 @@ class Menu extends React.Component {
     ];
     const currentCategory = this.props.currentCategory;
     const actualListItems = listItemsText.map(item => {
-      const category = "/" + item.name;
       return (
         <MenuListItem
           text={item.name}
           isActive={currentCategory === item.name}
           key={item.categoryId}
-          url={category}
         />
       );
     });
@@ -45,7 +39,7 @@ class Menu extends React.Component {
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">{actualListItems}</ul>
-          <SearchForm search={this.handleSearch} />
+          <SearchForm />
         </div>
       </nav>
     );
