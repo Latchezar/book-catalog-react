@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.f666b567.chunk.css",
-    "main.js": "/static/js/main.4e006c3c.chunk.js",
-    "main.js.map": "/static/js/main.4e006c3c.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.c85441e5.js",
-    "runtime~main.js.map": "/static/js/runtime~main.c85441e5.js.map",
-    "static/js/2.33b28638.chunk.js": "/static/js/2.33b28638.chunk.js",
-    "static/js/2.33b28638.chunk.js.map": "/static/js/2.33b28638.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.3595e1675fcf6fcdcade3203025a23de.js": "/precache-manifest.3595e1675fcf6fcdcade3203025a23de.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.f666b567.chunk.css.map": "/static/css/main.f666b567.chunk.css.map"
+    "main.css": "/book-catalog-react/static/css/main.f666b567.chunk.css",
+    "main.js": "/book-catalog-react/static/js/main.64e8316b.chunk.js",
+    "main.js.map": "/book-catalog-react/static/js/main.64e8316b.chunk.js.map",
+    "runtime~main.js": "/book-catalog-react/static/js/runtime~main.c8022e8c.js",
+    "runtime~main.js.map": "/book-catalog-react/static/js/runtime~main.c8022e8c.js.map",
+    "static/js/2.33b28638.chunk.js": "/book-catalog-react/static/js/2.33b28638.chunk.js",
+    "static/js/2.33b28638.chunk.js.map": "/book-catalog-react/static/js/2.33b28638.chunk.js.map",
+    "index.html": "/book-catalog-react/index.html",
+    "precache-manifest.4faa375f112c50a9ce7bb58e7e5bdae0.js": "/book-catalog-react/precache-manifest.4faa375f112c50a9ce7bb58e7e5bdae0.js",
+    "service-worker.js": "/book-catalog-react/service-worker.js",
+    "static/css/main.f666b567.chunk.css.map": "/book-catalog-react/static/css/main.f666b567.chunk.css.map"
   }
 }
